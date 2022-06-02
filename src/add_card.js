@@ -1,10 +1,12 @@
 import React from "react";
-import {useHistory} from "react-router-dom";
-import { useSelector } from "react-redux";
+import { useHistory } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { createCard } from "./redux/modules/word";
 
 const AddCard = ( {NewCard} ) => {
 
   const history = useHistory();
+  const dispatch = useDispatch();
 
   const word_title_ref = React.useRef();
   const word_mean_ref = React.useRef();
@@ -12,17 +14,19 @@ const AddCard = ( {NewCard} ) => {
 
 
  const NewWord = () => {
-    let test = {
+    let newList = {
       word_title: word_title_ref.current.value,
       word_mean: word_mean_ref.current.value,
       word_example: word_example_ref.current.value,
     }
 
-  
-    NewCard(test);
+    
+    // NewCard(test);
+    dispatch(createCard(newList));
 
     history.goBack();
 
+  
 
   }
 

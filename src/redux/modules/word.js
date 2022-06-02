@@ -5,7 +5,7 @@ const LOAD = "word/LOAD";
 const CREATE = "word/CREATE";
 
 // 기본값
-const initialState = {
+const cardState = {
   list: [{
     word_title:'단어 타이틀1',
     word_mean:'단어 의미1',
@@ -20,18 +20,22 @@ export const loadCard = (card) => {
 };
 
 export const createCard = (card) => {
+  console.log("액션 실행");
   return {type:CREATE, card};
 };
 
 // reducer
 
-export default function reducer(state={initialState}, action={}) {
+export default function reducer(state=cardState, action={}) {
   switch (action.type) {
-    case "card/LOAD":
+    case "word/LOAD":
       return state;
 
-    case "card/CREATE": {
+    case "word/CREATE": {
+      console.log(state.list);
+      console.log(action.card);
       const new_word_list = [...state.list, action.card];
+      console.log(new_word_list);
       return {list: new_word_list};
 
     }
