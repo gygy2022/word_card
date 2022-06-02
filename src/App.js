@@ -4,6 +4,10 @@ import CardList from './card_list';
 import AddCard from './add_card';
 import {useState} from 'react';
 import {Route, useHistory} from "react-router-dom";
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPlus } from "@fortawesome/free-solid-svg-icons";
+
 // import {useDispatch} from "react-redux";
 
 
@@ -33,12 +37,6 @@ function App() {
     console.log(wordData);
   };
 
-
-
-  
- 
-  
- 
   
 
   return (
@@ -51,7 +49,10 @@ function App() {
       
       <Route path="/" exact>
       <CardList wordData={wordData} />
-      <button onClick={() => {history.push(`/add`) }}>단어 추가</button>
+      
+      <button id="add_button" onClick={() => {history.push(`/add`) }}>
+      <FontAwesomeIcon icon={faPlus} className="plus_icon"/>
+      </button>
      
 </Route>
 

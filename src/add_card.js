@@ -12,7 +12,6 @@ const AddCard = ( {NewCard} ) => {
 
 
  const NewWord = () => {
-    // console.log(word_example_ref.current.value);
     let test = {
       word_title: word_title_ref.current.value,
       word_mean: word_mean_ref.current.value,
