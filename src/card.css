@@ -1,12 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
+
+*{
+  font-family: 'Noto Sans KR', sans-serif;
+}
+
 div {
   box-sizing: border-box;
 }
+
+/* app.js */
+
 .App{
   width:85%;
   height:100%;
   /* border:10px solid palegoldenrod; */
   margin:0 auto;
 }
+
 #word_card_title {
   font-size: 40px;
   font-weight: bold;
@@ -23,7 +33,7 @@ div {
   z-index: 10;
   width:80px;
   height:80px;
-  border-radius:200px;
+  border-radius:50px;
   background-color:goldenrod;
   border: none;
   cursor: pointer;
@@ -38,6 +48,9 @@ div {
   border:1px solid goldenrod;
   color: goldenrod;
 }
+
+/* card_list.js */
+
 .word_card_wrap {
   width: 1120px;
   height: 500px;
@@ -62,6 +75,26 @@ h4 {
   padding-bottom: 5px;
   border-bottom: 1px solid #000;
 }
+
+.card_text {
+  font-size:24px;
+  display:inline-block;
+  background-color:goldenrod;
+  margin:10px 0;
+}
+
+#word_mean {
+  font-size:18px;
+}
+
+#word_example {
+  font-size:18px;
+  background-color:transparent;
+  color:steelblue;
+  font-weight:bold;
+}
+
+/* add_card.js */
 
 .add_card_wrap {
   width: 500px;
@@ -95,7 +128,4 @@ h4 {
   margin-bottom:20px;
 }
 
-#word_example {
-  color: skyblue;
-}
 

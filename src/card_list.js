@@ -19,11 +19,11 @@ const CardList = ( props ) => {
         return (
           <div className="word_card">
           <h4>단어</h4>
-          <h3 id="word_title">{props.wordData[index].word_title}</h3>
+          <span className="card_text" id="word_title">{props.wordData[index].word_title}</span>
           <h4>설명</h4>
-          <h3 id="word_mean">{props.wordData[index].word_mean}</h3>
+          <span className="card_text" id="word_mean">{props.wordData[index].word_mean}</span>
           <h4>예시</h4>
-          <h3 id="word_example">{props.wordData[index].word_example}</h3>
+          <span className="card_text" id="word_example">{props.wordData[index].word_example}</span>
         </div>
 
         )
