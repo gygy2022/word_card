@@ -1,23 +1,27 @@
 import './App.css';
 import './card.css';
+import React from "react";
 import CardList from './card_list';
 import AddCard from './add_card';
 import {useState, useEffect} from 'react';
 import {Route, useHistory} from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { loadCardFB } from "./redux/modules/word";
 
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
 
-// import {useDispatch} from "react-redux";
 
 
-// import {createBucket, loadBucketFB} from "./redux/modules/bucket";
+
+
 
 
 
 function App() {
   const history = useHistory();
+  const dispatch = useDispatch();
   
   // useEffect(async() => {
   //   console.log("db데이터");
@@ -31,6 +35,10 @@ function App() {
  
   // }, []);
  
+  React.useEffect( () => {
+    dispatch(loadCardFB());
+    
+  }, []);
 
 
   const [wordData,setWordData ] = useState([{
