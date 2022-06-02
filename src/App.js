@@ -4,20 +4,35 @@ import CardList from './card_list';
 import AddCard from './add_card';
 import {useState, useEffect} from 'react';
 import {Route, useHistory} from "react-router-dom";
-// import {db} from './firebase';
-// import { collection, doc, getDoc, getDocs, addDoc, updateDoc, deleteDoc } from "firebase/firestore";
+
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
 
 // import {useDispatch} from "react-redux";
+
+
 // import {createBucket, loadBucketFB} from "./redux/modules/bucket";
 
 
 
 function App() {
   const history = useHistory();
+  
+  // useEffect(async() => {
+  //   console.log("db데이터");
+  //   console.log(db);
+    
+  //    await addDoc(collection(db,"wordCard"),{
+  //     completed:false,
+  //     text:"new"
+  //   })
+
  
+  // }, []);
+ 
+
+
   const [wordData,setWordData ] = useState([{
     word_title:'단어 타이틀1',
     word_mean:'단어 의미1',
@@ -40,6 +55,7 @@ function App() {
 
   return (
     <>
+   
     
     <div className="App">
       <div id="word_card_title" 

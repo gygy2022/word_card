@@ -2,6 +2,7 @@ import React from "react";
 // import {useHistory} from "react-router-dom";
  import { useDispatch, useSelector } from "react-redux";
 
+
 const CardList = ( props ) => {
   // const my_lists = useSelector((state) => state.word.list);
 

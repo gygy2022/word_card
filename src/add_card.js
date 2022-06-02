@@ -2,6 +2,8 @@ import React from "react";
 import { useHistory } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { createCard } from "./redux/modules/word";
+import {db} from './firebase';
+import { collection, doc, getDoc, getDocs, addDoc, updateDoc, deleteDoc } from "firebase/firestore";
 
 const AddCard = ( {NewCard} ) => {
 
@@ -29,6 +31,17 @@ const AddCard = ( {NewCard} ) => {
   
 
   }
+
+  async function addFB() {
+    console.log("파이어베이스에 잘 들어갔니?");
+
+      await addDoc(collection(db,"wordCard"),{
+      completed:false,
+      text:"new"
+    })
+
+  };
+
 
   
   
